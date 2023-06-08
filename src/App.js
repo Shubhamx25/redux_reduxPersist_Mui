@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { increment, decrement } from "./redux/countReducer";
+
+/* import { MuiTypography } from "./components/MuiTypography"; */
+import { MuiButton } from "./components/MuiButton";
+
+
+
 
 function App() {
+  const val = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  
+  const handleIncrement = () => {
+    dispatch(increment());
+  }
+
+  const handleDecrement = () => {
+    dispatch(decrement());
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleIncrement}>+</button>
+      <p>{val}</p>
+      <button onClick={handleDecrement}>-</button>
+    {/*   <MuiTypography /> */}
+      <MuiButton />
     </div>
   );
 }
