@@ -3,8 +3,8 @@ import React from "react";
 import { increment, decrement } from "./redux/countReducer";
 
 /* import { MuiTypography } from "./components/MuiTypography"; */
-import { MuiButton } from "./components/MuiButton";
-
+/* import { MuiButton } from "./components/MuiButton"; */
+import MuiTextfield from "./components/MuiTextfield";
 
 
 
@@ -25,8 +25,13 @@ function App() {
       <button onClick={handleIncrement}>+</button>
       <p>{val}</p>
       <button onClick={handleDecrement}>-</button>
-    {/*   <MuiTypography /> */}
-      <MuiButton />
+
+
+      {/* <MuiTypography /> */}
+      {/* <MuiButton /> */}
+      
+      <MuiTextfield />
+
     </div>
   );
 }
